@@ -2,13 +2,9 @@ package normal;
 
 public class Main {
     public static void main(String[] args) {
-        Solution_283 solution_283 = new Solution_283();
-        String s = "babad";
-        int[] nums = {0,2,1};
-
-        solution_283.moveZeroes(nums);
-        for(int v :nums){
-            System.out.println(v);
-        }
+        Solution_125 solution_125 = new Solution_125();
+        String s = "0P";
+        System.out.println(s.charAt(0) - s.charAt(1));
+        System.out.println(solution_125.isPalindrome(s));
     }
 }
