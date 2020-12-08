@@ -2,8 +2,7 @@ package normal;
 
 public class Solution_8 {
     public int myAtoi(String s) {
-        s = removeWhitespace(s);
-        System.out.println(s);
+        s = s.trim();
 
         if(s.length() == 0) return 0;
 
@@ -13,32 +12,19 @@ public class Solution_8 {
         if(s.charAt(0) == '+' || s.charAt(0) == '-'){
             // 以正符号开头时
             int index = 1;
-            while (index < len && isNumber(s.charAt(index))){
+            while (index < len && Character.isDigit(s.charAt(index))){
                 result = append(result, s.charAt(index), s.charAt(0));
                 index++;
             }
-        }else if(isNumber(s.charAt(0))){
+        }else if(Character.isDigit(s.charAt(0))){
             // 以数字开头时
             int index = 0;
-            while(index < len && isNumber(s.charAt(index))){
+            while(index < len && Character.isDigit(s.charAt(index))){
                 result = append(result, s.charAt(index), '+');
                 index++;
             }
         }
         return result;
-    }
-
-    private String removeWhitespace(String s){
-        int len = s.length();
-        int index = 0;
-        while(index < len && s.charAt(index) == ' '){
-            index++;
-        }
-        return s.substring(index);
-    }
-
-    private boolean isNumber(char ch){
-        return ch >= '0' && ch <= '9';
     }
 
     // 进行溢出判断，将ch接在num后面
