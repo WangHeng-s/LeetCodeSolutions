@@ -21,7 +21,9 @@ public class Solution_102 {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         while(!queue.isEmpty()){
-            List<Integer> level = new ArrayList<>();
+            List<Integer> level = new ArrayList<>();  // 每一层
+
+            // 遍历本层，将下一层入队
             int count = queue.size();
             while(count > 0){
                 TreeNode node = queue.poll();
