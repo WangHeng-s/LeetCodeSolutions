@@ -6,6 +6,7 @@ public class Solution_278 {
         return true;
     }
     public int firstBadVersion(int n) {
+        // 二分查找
         int left = 1, right = n;
         while(left < right){
             int version = left + (right - left) / 2; // 防止整数溢出时出错
