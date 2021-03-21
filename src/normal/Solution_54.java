@@ -13,7 +13,7 @@ public class Solution_54 {
         boolean[][] visited = new boolean[rows][columns];
         int total = rows * columns;
         int row = 0, column = 0;
-        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};    
         int directionIndex = 0;
         for (int i = 0; i < total; i++) {
             order.add(matrix[row][column]);
