@@ -9,7 +9,25 @@ public class Solution_25 {
         ListNode next;
         ListNode(int x) { val = x; }
     }
-//    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-//
-//    }
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode node1 = l1;
+        ListNode node2 = l2;
+        ListNode dummy = new ListNode(-1);
+        ListNode tail = dummy;
+        while (node1 != null && node2 != null){
+            if(node1.val < node2.val){
+                tail.next = node1;
+                node1 = node1.next;
+                tail = tail.next;
+            }else {
+                tail.next = node2;
+                node2 = node2.next;
+                tail = tail.next;
+            }
+        }
+        tail.next = node1 == null? node2:node1;
+
+        return dummy.next;
+
+    }
 }
